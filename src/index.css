@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  svg text {
+    font-family: inherit !important;
+  }
+
+  * {
+    @apply leading-tight;
+  }
+}
+
+@layer components {
+}
+
+/* Content-editable Divs */
+div[contenteditable='true']:empty:before {
+  color: #888;
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
+div[contenteditable='true']:focus {
+  outline: none;
+}
+
+button:focus,
+textarea:focus,
+input:focus {
+  outline: none;
+}
